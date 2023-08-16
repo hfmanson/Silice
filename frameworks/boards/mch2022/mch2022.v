@@ -49,10 +49,11 @@ module top(
 `endif
 `ifdef LCD
   output [7:0] lcd_d,
-  output lcd_rs,
-  output lcd_wr_n,
+  inout lcd_rs,
+  inout lcd_wr_n,
   output lcd_cs_n,
   output lcd_rst_n,
+  //input  lcd_rst_n,
   input  lcd_mode,
   input  lcd_fmark,
 `endif
@@ -110,10 +111,11 @@ M_main __main(
 `endif
 `ifdef LCD
   .out_lcd_d(lcd_d),
-  .out_lcd_rs(lcd_rs),
-  .out_lcd_wr_n(lcd_wr_n),
+  .inout_lcd_rs(lcd_rs),
+  .inout_lcd_wr_n(lcd_wr_n),
   .out_lcd_cs_n(lcd_cs_n),
   .out_lcd_rst_n(lcd_rst_n),
+//  .in_lcd_rst_n(lcd_rst_n),
   .in_lcd_mode(lcd_mode),
   .in_lcd_fmark(lcd_fmark),
 `endif
